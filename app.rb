@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require 'dotenv'
 
 $: << File.expand_path('../', __FILE__)
@@ -8,13 +9,16 @@ module Kato
 
     Dotenv.load
 
+    register Sinatra::Flash
+
     configure do
       enable :logging
       set :sessions,
-          :httponly     => true,
-          :secure       => production?,
-          :expire_after => 31557600,
-          :secret       => ENV['SESSION_SECRET']
+          :httponly         => true,
+          :secure           => production?,
+          :expire_after     => 31557600,
+          :secret           => ENV['SESSION_SECRET'],
+          :method_override  => true
     end
 
     get '/' do

@@ -9,12 +9,16 @@
       </div>
     </div>
   </form>
+  <% if flash[:success] %>
+  <div class="alert alert-success mt-3" role="alert"><%= flash[:success] %></div>
+  <% end %>
   <table class="table mt-3">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Message</th>
         <th scope="col">Delivered</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +27,12 @@
         <th scope="row"><%= message.id %></th>
         <td><%= message.text %></td>
         <td><%= message.created_at %></td>
+        <td>
+          <form action="/message/<%= message.id %>" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="×">
+          </form>
+        </td>
       </tr>
       <% end %>
     </tbody>
