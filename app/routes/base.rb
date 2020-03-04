@@ -1,4 +1,4 @@
-module Sidekiq
+module Kato
   module Routes
     class Base < Sinatra::Application
       configure do

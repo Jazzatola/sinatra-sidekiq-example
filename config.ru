@@ -1,3 +1,6 @@
 root = ::File.dirname(__FILE__)
+
 require ::File.join(root, 'app')
-run Sidekiq::App.new
+require 'sidekiq/web'
+
+run Rack::URLMap.new("/" => Kato::App.new, "/admin/sidekiq" => Sidekiq::Web)

@@ -6,6 +6,7 @@ gem 'sinatra', '~> 2.0'
 gem 'dotenv', '~> 2.7'
 gem 'rake', '~> 13.0'
 gem 'sequel', '~> 5.25'
+gem 'sidekiq', '~> 6.0'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'

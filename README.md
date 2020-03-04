@@ -1,3 +1,3 @@
-# Sidekiq
+# Kato
 
-Testing out Sidekiq, Redis with Sinatra and Heroku
+Testing out Sidekiq, Redis and Sinatra with Heroku

@@ -1,4 +1,4 @@
-module Sidekiq
+module Kato
   module Models
     class Message < Sequel::Model
     end

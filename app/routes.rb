@@ -1,8 +1,8 @@
 require 'app/routes/base'
 require 'app/routes/message'
 
-module Sidekiq
+module Kato
   class App
-    use Sidekiq::Routes::Message
+    use Kato::Routes::Message
   end
 end

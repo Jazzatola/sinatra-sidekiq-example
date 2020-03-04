@@ -3,7 +3,7 @@ require 'dotenv'
 
 $: << File.expand_path('../', __FILE__)
 
-module Sidekiq
+module Kato
   class App < Sinatra::Base
 
     Dotenv.load
@@ -25,4 +25,5 @@ module Sidekiq
 end
 
 require 'app/models'
+require 'app/workers'
 require 'app/routes'
